@@ -1,0 +1,28 @@
+/* Styles for Note component */
+
+.note {
+    background-color: black;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.date {
+    font-size: 12px;
+    color: #999999;
+    margin-bottom: 8px;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.content {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.6;
+}
