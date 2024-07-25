@@ -1,6 +1,6 @@
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 
-import '../../../Desktop/NoteTakingApp/src/App.css'
+
 
 import {NoteForm} from "./Pages/NoteForm.jsx";
 import {Notes} from "./Pages/Notes.jsx";

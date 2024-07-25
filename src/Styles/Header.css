@@ -1,8 +1,8 @@
 /* Styles for Header component */
 
 .header {
-    background-color: #007bff;
-    color: #0056b3;
+    background-color: darkgoldenrod;
+    color: yellowgreen;
     padding: 20px;
     text-align: center;
     border-bottom: 2px solid #0056b3;

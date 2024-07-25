@@ -7,15 +7,17 @@
 }
 
 .link {
-    display: inline-block;
+    text-align: center;
+    display: block;
     margin-bottom: 20px;
-    font-size: 16px;
+    font-size: 20px;
     color: #007bff;
     text-decoration: none;
     padding: 8px 16px;
     border: 1px solid #007bff;
     border-radius: 4px;
     transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
 }
 
 .link:hover {
@@ -32,7 +34,7 @@
 }
 
 .note {
-    background-color: #007bff;
+    background-color: black;
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 16px;
@@ -49,4 +51,7 @@
     margin-top: 8px;
     font-size: 16px;
     color: #666;
+}
+.head{
+    padding: 16px 24px ;
 }

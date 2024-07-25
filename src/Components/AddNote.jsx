@@ -3,12 +3,12 @@ import "../Styles/AddNote.css"
 export const AddNote = () => {
    const navigate= useNavigate()
     return (
-        <>
+        < div onClick={()=>{
+            navigate( "/NoteForm" );
+        }}>
 
-            <Link to={"/NoteForm"} onClick={()=>{
-                navigate( "NoteForm" );
-            }}>Add Note</Link>
+            <Link to={"/NoteForm"} >Add Note</Link>
 
-        </>
+        </div>
     )
 }

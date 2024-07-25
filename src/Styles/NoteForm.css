@@ -24,7 +24,7 @@ textarea {
     font-size: 14px;
 }
 
-button {
+.submit {
     background-color: #007bff;
     color: white;
     border: none;
@@ -32,13 +32,14 @@ button {
     cursor: pointer;
     border-radius: 4px;
     font-size: 16px;
-}
 
-button:hover {
+}
+.submit:hover {
     background-color: #0056b3;
+
 }
 
-button:focus {
+.submit:focus {
     outline: none;
 }
 
@@ -49,6 +50,10 @@ form > * {
 
 /* Optional: Add padding and background to the whole body */
 body {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
     padding: 20px;
     background-color: black;
+    height: 100vh;
 }

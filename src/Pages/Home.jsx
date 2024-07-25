@@ -1,16 +1,23 @@
 import {Header} from "../Components/Header.jsx";
 import {AddNote} from "../Components/AddNote.jsx";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import "../Styles/Home.css"
-import {Fragment} from "react";
 export const Home = () => {
+   const navigate= useNavigate()
     return (
-        <Fragment className={"container"}>
-            <Fragment className={"link"}>
+        <div className={"container"}>
+            <div className={`head`}>
                 <Header />
+            </div>
+            <br/>
+            <div className={"link"}>
                 <AddNote />
-                <Link to={"Notes"}> Notes</Link>
-            </Fragment>
-        </Fragment>
+            </div>
+            <div className={`link`} onClick={()=>{
+                navigate("/Notes")
+            }}>
+            <Link to={"Notes"}> Notes</Link>
+            </div>
+        </div>
     )
 }

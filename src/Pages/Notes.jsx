@@ -1,32 +1,40 @@
 import {AddNote} from "../Components/AddNote.jsx";
 import {Link, useNavigate} from "react-router-dom";
-import {Fragment, useContext, useState} from "react";
-import {NotesContext} from "../NotesProvider.jsx";
+import {useEffect, useState} from "react";
 import {Note} from "../Components/Note.jsx";
 import "../Styles/Notes.css"
 export const Notes = () => {
 
+    const [localNotes, setLocalNotes] = useState([])
 
-    const {Notes,setNotes} = useContext(NotesContext)
+    useEffect(() => {
+        const keys=Object.keys(localStorage);
+        const notes = keys.map(key => JSON.parse(localStorage.getItem(key)));
+        setLocalNotes(notes);
+    }, []);
+   // const {Notes,setNotes} = useContext(NotesContext)
     const navigate= useNavigate()
     const RemoveNote = (id) => {
-
-        setNotes(Notes.filter((note) => note.id !== id))
-
+        //setNotes(Notes.filter((note) => note.id !== id))
+        localStorage.removeItem(`${id}`);
+        setLocalNotes(localNotes.filter(note => note.id !== id))
     }
     return (
-        <Fragment className="container">
-            <Fragment className={"link"}>
-        <AddNote/>
-        <Link to={"/"} onClick={()=>{
-            navigate( "/" );
-        }}>Home</Link>
-            </Fragment>
+        <div className="container">
+            <div className={"link"} onClick={()=>{
+                navigate( "/" );
+            }}>
+
+        <Link to={"/"} >Home</Link>
+            </div>
+            <div className={`link`}> <AddNote/></div>
+            <div className={`note-container`}>
             {
-                Notes.map(note => (
-                    <Note className={"note"} key={note.id} note={note} Remove={RemoveNote} />
-                ))
-            }
-        </Fragment>
+                localNotes.map(note => {
+                   if (note!=null)
+                    return <Note className={`note`} key={note.id} note={note} Remove={RemoveNote}/>
+                })
+            }</div>
+        </div>
     )
 }
